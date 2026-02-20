@@ -1,4 +1,4 @@
-# liberia_laboratorio-UNIR
+# libreria_laboratorio-UNIR
 
 codigo fuente para un administrador de libreria
 
