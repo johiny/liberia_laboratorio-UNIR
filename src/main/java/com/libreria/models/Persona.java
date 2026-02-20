@@ -1,4 +1,4 @@
-package com.libreria;
+package com.libreria.models;
 
 public class Persona {
     private String nombre;
