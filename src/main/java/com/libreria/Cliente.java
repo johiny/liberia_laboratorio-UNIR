@@ -2,34 +2,20 @@ package com.libreria;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class Cliente {
-    private String nombre;
+public class Cliente extends Persona {
     private String id;
     private List<Libro> librosComprados = new ArrayList<>();
 
     public Cliente() {
-    }
-
-    public Cliente(String nombre, String id) {
-        this.nombre = nombre;
-        this.id = id;
+        super();
     }
 
     public Cliente(String nombre, String id, List<Libro> librosComprados) {
-        this.nombre = nombre;
+        super(nombre);
         this.id = id;
         this.librosComprados = librosComprados != null ? new ArrayList<>(librosComprados) : new ArrayList<>();
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getId() {
@@ -66,9 +52,9 @@ public class Cliente {
                 .map(Libro::getTitulo)
                 .collect(Collectors.joining(", "));
         return "Cliente{" +
-                "nombre='" + nombre + '\'' +
-                ", id='" + id + '\'' +
-                ", librosComprados=[" + titulos + "]" +
-                '}';
+            "nombre='" + getNombre() + '\'' +
+            ", id='" + id + '\'' +
+            ", librosComprados=[" + titulos + "]" +
+            '}';
     }
 }
