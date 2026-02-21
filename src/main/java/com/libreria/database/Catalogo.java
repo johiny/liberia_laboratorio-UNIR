@@ -17,6 +17,15 @@ public class Catalogo {
     // Registro de ventas: libro -> cliente que lo compró
     private Map<Libro, Cliente> vendidos = new LinkedHashMap<>();
 
+    // Constructores
+    public Catalogo() {
+    }
+
+    public Catalogo(List<Libro> libros, Map<Libro, Cliente> vendidos) {
+        this.libros = libros != null ? new ArrayList<>(libros) : new ArrayList<>();
+        this.vendidos = vendidos != null ? new LinkedHashMap<>(vendidos) : new LinkedHashMap<>();
+    }
+
     // ── Agregar un libro al catálogo ──────────────────────────────────────────
     public boolean addLibro(Libro libro) {
         if (libro == null) return false;
@@ -49,6 +58,10 @@ public class Catalogo {
         return new LinkedHashMap<>(vendidos);
     }
 
+    public void setVendidos(Map<Libro, Cliente> vendidos) {
+        this.vendidos = vendidos != null ? new LinkedHashMap<>(vendidos) : new LinkedHashMap<>();
+    }
+
     // ── Buscar por título (parcial, sin distinción de mayúsculas) ─────────────
     public List<Libro> buscarPorTitulo(String titulo) {
         if (titulo == null || titulo.isBlank()) return new ArrayList<>(libros);
@@ -75,5 +88,9 @@ public class Catalogo {
     // ── Devolver todos los libros del catálogo ────────────────────────────────
     public List<Libro> getLibros() {
         return new ArrayList<>(libros);
+    }
+
+    public void setLibros(List<Libro> libros) {
+        this.libros = libros != null ? new ArrayList<>(libros) : new ArrayList<>();
     }
 }

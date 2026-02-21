@@ -7,11 +7,6 @@ public class Novela extends Libro {
         super();
     }
 
-    public Novela(String titulo, Autor[] autores, String isbn, int anioPublicacion, String genero) {
-        super(titulo, autores, isbn, anioPublicacion);
-        this.genero = genero;
-    }
-
     public Novela(String titulo, Autor[] autores, String isbn, int anioPublicacion, double precio, String genero) {
         super(titulo, autores, isbn, anioPublicacion, precio);
         this.genero = genero;

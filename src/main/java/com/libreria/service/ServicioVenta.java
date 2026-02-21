@@ -13,6 +13,11 @@ public class ServicioVenta {
         this.catalogo = catalogo;
     }
 
+    // Constructor por defecto: crea un catálogo por defecto
+    public ServicioVenta() {
+        this.catalogo = new Catalogo();
+    }
+
     public boolean venderLibro(Libro libro, Cliente cliente) {
         if (libro == null || cliente == null) return false;
 
@@ -23,5 +28,13 @@ public class ServicioVenta {
             return true;
         }
         return false;
+    }
+
+    public Catalogo getCatalogo() {
+        return catalogo;
+    }
+
+    public void setCatalogo(Catalogo catalogo) {
+        this.catalogo = catalogo;
     }
 }
