@@ -1,4 +1,4 @@
-package com.libreria;
+package com.libreria.models;
 
 import java.util.Arrays;
 import java.util.Objects;
