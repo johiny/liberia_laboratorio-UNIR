@@ -16,7 +16,7 @@ public class ServicioVenta {
     public boolean venderLibro(Libro libro, Cliente cliente) {
         if (libro == null || cliente == null) return false;
 
-        // El servicio habla con el catálogo, no con la "base de datos"
+        // El servicio habla con el catálogo
         if (catalogo.estaDisponible(libro)) {
             catalogo.retirarLibro(libro, cliente);
             cliente.addLibroComprado(libro);
