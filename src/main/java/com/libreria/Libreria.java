@@ -7,17 +7,32 @@ import java.util.stream.Collectors;
 
 public class Libreria {
     private List<Libro> catalogoLibros = new ArrayList<>();
+    private String nombre;
 
     public Libreria() {
+    }
+
+    public Libreria(String nombre, List<Libro> catalogoLibros) {
+        this.nombre = nombre;
+        setCatalogoLibros(catalogoLibros);
     }
 
     public List<Libro> getCatalogoLibros() {
         return catalogoLibros;
     }
-
+    
     public void setCatalogoLibros(List<Libro> catalogoLibros) {
         this.catalogoLibros = catalogoLibros != null ? new ArrayList<>(catalogoLibros) : new ArrayList<>();
     }
+    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
 
     public boolean addLibro(Libro libro) {
         if (libro == null) return false;
